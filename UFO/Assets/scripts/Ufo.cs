@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ufo : MonoBehaviour
 {
     public float speed;
     Rigidbody2D rb2d;
+    private int count = 0;
+    public Text score_02;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +29,8 @@ public class Ufo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Pickup"))
         {
-            Destroy(collision.gameObject);
+           count++;
+           Destroy(collision.gameObject);
         }
     }
 }
